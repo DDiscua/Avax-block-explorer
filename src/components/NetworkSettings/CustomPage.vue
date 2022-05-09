@@ -10,7 +10,7 @@
                 <input
                     v-model="url"
                     type="text"
-                    placeholder="http://localhost:9650"
+                    placeholder="http://35.231.246.12"
                     @input="checkUrl"
                 />
                 <p v-if="err_url" class="form_error">{{ err_url }}</p>
