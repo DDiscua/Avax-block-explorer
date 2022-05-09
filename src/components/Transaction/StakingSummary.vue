@@ -28,7 +28,7 @@
                                 >{{
                                     validatorRewardUTXO.amount | toAVAX
                                 }}
-                                AVAX</span
+                                NFTY</span
                             >
                         </p>
                     </template>
@@ -40,7 +40,7 @@
                                 >{{
                                     delegatorRewardUTXO.amount | toAVAX
                                 }}
-                                AVAX</span
+                                NFTY</span
                             >
                         </p>
                         <p class="margin_top">
@@ -49,7 +49,7 @@
                                 >{{
                                     delegatorFeeUTXO.amount | toAVAX
                                 }}
-                                AVAX</span
+                                NFTY</span
                             >
                             as fee
                         </p>

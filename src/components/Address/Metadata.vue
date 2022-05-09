@@ -9,7 +9,7 @@
             </p>
         </article>
         <article class="meta_row">
-            <p class="meta_label">AVAX Balance</p>
+            <p class="meta_label">NFTY Balance</p>
             <div class="meta_value symbol">
                 <div class="avax_balance_container">
                     <div>
@@ -92,7 +92,7 @@ export default class Metadata extends Vue {
         return this.$store.state.assets
     }
 
-    // P-Chain AVAX balance
+    // P-Chain NFTY balance
     get P_unlocked(): Big {
         return this.metaData.P_unlocked
     }
@@ -114,7 +114,7 @@ export default class Metadata extends Vue {
         return this.metaData.XP_unlocked
     }
 
-    // X-Chain AVAX balance
+    // X-Chain NFTY balance
     get X_unlocked(): Big {
         return this.metaData.X_unlocked
     }
@@ -128,7 +128,7 @@ export default class Metadata extends Vue {
         return this.metaData.XC_unlocked
     }
 
-    // C-Chain AVAX balance
+    // C-Chain NFTY balance
     // @dev we do not support EVM balances here. only bech32, no 0x
 }
 </script>

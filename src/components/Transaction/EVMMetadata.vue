@@ -60,7 +60,7 @@
         <article class="meta_row">
             <p class="meta_label">
                 Value
-                <Tooltip content="The value being transacted in AVAX." />
+                <Tooltip content="The value being transacted in NFTY." />
             </p>
             <div class="meta_value values">
                 {{ tx.value }} {{ nativeSymbol }}
@@ -81,7 +81,7 @@
             <p class="meta_label">
                 Gas Price
                 <Tooltip
-                    content="Cost per unit of gas specified for the transaction, in AVAX and nAVAX."
+                    content="Cost per unit of gas specified for the transaction, in NFTY and nNFTY."
                 />
             </p>
             <div class="meta_value values">
@@ -92,7 +92,7 @@
             <p class="meta_label">
                 Gas Limit
                 <Tooltip
-                    content="Maximum amount of gas provided for the transaction. For normal AVAX transfers, the value is 21,000. For contract calls, this value is higher and bound by block gas limit."
+                    content="Maximum amount of gas provided for the transaction. For normal NFTY transfers, the value is 21,000. For contract calls, this value is higher and bound by block gas limit."
                 />
             </p>
             <div class="meta_value values">

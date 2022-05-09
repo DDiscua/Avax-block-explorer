@@ -30,7 +30,7 @@
                 </div>
             </template>
             <template #item.value="{ item }">
-                <div>{{ item.value }} AVAX</div>
+                <div>{{ item.value }} NFTY</div>
             </template>
             <template #item.input="{ item }">
                 <div>
@@ -47,7 +47,7 @@
                 </div>
             </template>
             <template #item.gasPrice="{ item }">
-                <div>{{ item.gasPrice }} AVAX</div>
+                <div>{{ item.gasPrice }} NFTY</div>
             </template>
             <template #item.gas="{ item }">
                 <div>{{ item.gas.toLocaleString() }}</div>

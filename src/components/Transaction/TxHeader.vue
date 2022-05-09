@@ -24,7 +24,7 @@
                 <span
                     >The P-Chain is the metadata blockchain on Avalanche,
                     managing validators and custom subnets. Validators stake
-                    AVAX on the P-Chain to secure the network.</span
+                    NFTY on the P-Chain to secure the network.</span
                 >
             </v-tooltip>
             <v-tooltip>

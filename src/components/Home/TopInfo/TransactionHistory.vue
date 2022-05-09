@@ -279,7 +279,7 @@ export default {
                 ],
                 datasets: [
                     {
-                        label: 'Volume (AVAX)',
+                        label: 'Volume (NFTY)',
                         backgroundColor: 'transparent',
                         borderColor: '#e84970',
                         pointBackgroundColor: 'transparent',
