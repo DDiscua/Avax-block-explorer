@@ -48,7 +48,7 @@ jobs:
       - name: Push GCR.io
         run: docker push gcr.io/avax-347103/nfty-block-explorer:${{ github.sha }}
       - name: Deploy to gcloud run to Master
-        if: github.ref == 'refs/heads/master'dev
+        if: github.ref == 'refs/heads/master'
         run: gcloud run deploy nfty-block-explorer-master --image=gcr.io/avax-347103/nfty-block-explorer:${{ github.sha }} --port=80 --allow-unauthenticated --project=avax-347103 --region=us-central1 --set-env-vars NODE_ENV=develop
       # - name: Deploy to gcloud run to PRODUCTION
       #   if: github.ref == 'refs/heads/master'
