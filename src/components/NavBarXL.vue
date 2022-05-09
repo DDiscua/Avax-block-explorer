@@ -11,13 +11,13 @@
         <!-- LEFT -->
         <div class="logo">
             <!-- Just hardcoding to mainnet explorer since this file isn't used -->
-            <a href="https://explorer.avax.network/">
+            <a href="https://localhost8080/">
                 <img
                     style="height: 31px"
-                    src="@/assets/explorer_logo_black.png"
+                    src=""
                 />
                 <h1>
-                    <span class="hide">Avalanche Explorer</span>
+                    <span class="hide">NTFY Explorer</span>
                 </h1>
             </a>
         </div>
