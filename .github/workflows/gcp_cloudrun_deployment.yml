@@ -1,0 +1,55 @@
+name: Nfty Google Cloud Run Deployment
+on:
+  push:
+    branches:
+    - develop
+    - master
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log Level'
+        required: true
+        default: 'warning'
+        type: choice
+        options:
+          - info
+          - warning
+          - debug
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - id: auth
+        name: 'Authenticate to Google Cloud'
+        uses: 'google-github-actions/auth@v0.7.1'
+        with:
+          workload_identity_provider: 'projects/359395655855/locations/global/workloadIdentityPools/github-wki-pool/providers/github-wki-provider'
+          service_account: 'githubactions-pipeline@avax-347103.iam.gserviceaccount.com'
+      - name: 'Set up Cloud SDK'
+        uses: 'google-github-actions/setup-gcloud@v0'
+      - name: Build and push
+        id: docker_build
+        uses: docker/build-push-action@v2
+        with:
+          context: ./
+          file: ./Dockerfile
+          push: false
+          tags: |-
+            gcr.io/avax-347103/nfty-block-explorer:${{ github.sha }} 
+            gcr.io/avax-347103/nfty-block-explorer:latest
+      - name: Authorize Docker push
+        run: gcloud auth configure-docker
+      - name: Push GCR.io
+        run: docker push gcr.io/avax-347103/nfty-block-explorer:${{ github.sha }}
+      - name: Deploy to gcloud run to Master
+        if: github.ref == 'refs/heads/master'
+        run: gcloud run deploy nfty-block-explorer-master --image=gcr.io/avax-347103/nfty-block-explorer:${{ github.sha }} --port=80 --allow-unauthenticated --project=avax-347103 --region=us-central1 --set-env-vars NODE_ENV=develop
+      # - name: Deploy to gcloud run to PRODUCTION
+      #   if: github.ref == 'refs/heads/master'
+      #   run: gcloud run deploy api-skulloids --image=gcr.io/avax-347103/nfty-block-explorer:${{ github.sha }} --port=80 --allow-unauthenticated --project=avax-347103 --region=us-central1 --set-env-vars NODE_ENV=production 
