@@ -30,14 +30,14 @@
             <p class="label">
                 Total Staked
                 <TooltipMeta
-                    content="Total value of AVAX locked to secure Avalanche"
+                    content="Total value of NFTY locked to secure Avalanche"
                     :color="'#2196f3'"
                 />
             </p>
             <div>
                 <p v-if="subnetsLoaded" class="meta_val">
                     {{ totalStake }}
-                    <span class="unit">AVAX</span>
+                    <span class="unit">NFTY</span>
                 </p>
                 <v-progress-circular
                     v-else
@@ -53,7 +53,7 @@
             <p class="label">
                 Staking Ratio
                 <TooltipMeta
-                    content="Percentage of AVAX locked to secure Avalanche out of total AVAX supply"
+                    content="Percentage of NFTY locked to secure Avalanche out of total NFTY supply"
                     :color="'#2196f3'"
                 />
             </p>
